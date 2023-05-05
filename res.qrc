@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/button.png</file>
+        <file>res/icon.png</file>
+        <file>res/good.png</file>
+        <file>res/great.png</file>
+        <file>res/miss.png</file>
+        <file>res/perfect.png</file>
+        <file>res/longbut.png</file>
+    </qresource>
+</RCC>
