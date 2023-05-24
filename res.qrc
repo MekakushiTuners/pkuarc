@@ -7,5 +7,141 @@
         <file>res/miss.png</file>
         <file>res/perfect.png</file>
         <file>res/longbut.png</file>
+        <file>res/chronostasis/Chronostasis.ogg</file>
+        <file>res/infinity heaven/InfinityHeaven.ogg</file>
+        <file>res/Vicious Heroism/1555620010.ogg</file>
+        <file>res/Vicious Heroism/1558494995.mc</file>
+        <file>res/Vicious Heroism/1558718394.mc</file>
+        <file>res/Vicious Heroism/1561219884.mc</file>
+        <file>res/Vicious Heroism/1565427517.mc</file>
+        <file>res/Vicious Heroism/tmp_1555620102.jpg</file>
+        <file>res/worldender/1659610730.mc</file>
+        <file>res/worldender/1659610730.mc_</file>
+        <file>res/worldender/1659610730.ogg</file>
+        <file>res/background.jpg</file>
+        <file>res/background_1.jpg</file>
+        <file>res/arc_icon.jpg</file>
+        <file>res/arcaea.webp</file>
+        <file>res/hit_far.png</file>
+        <file>res/hit_lost.png</file>
+        <file>res/hit_pure.png</file>
+        <file>res/note.png</file>
+        <file>res/note_hold.png</file>
+        <file>res/note_hold_dark.png</file>
+        <file>res/single_light.jpg</file>
+        <file>res/scenery_bg_default.png</file>
+        <file>res/bg_byd_dark.jpg</file>
+        <file>res/bg_light.jpg</file>
+        <file>res/rating_6.png</file>
+        <file>res/5_d.png</file>
+        <file>res/mid_but.webp</file>
+        <file>res/purple_chara_underlay.png</file>
+        <file>res/side-shards-01-IS-left.png</file>
+        <file>res/side-shards-01-IS-right.png</file>
+        <file>res/0.png</file>
+        <file>res/0_icon.png</file>
+        <file>res/mainmenu/main_about_active.png</file>
+        <file>res/mainmenu/main_musicplay_active.png</file>
+        <file>res/mainmenu/main_network.png</file>
+        <file>res/mainmenu/world_active.png</file>
+        <file>res/mainmenu/world_title_en.png</file>
+        <file>res/mainmenu/world_resume.png</file>
+        <file>res/topbar/top_bar_bg.png</file>
+        <file>res/topbar/settings.png</file>
+        <file>res/topbar/top_button.png</file>
+        <file>res/topbar/top_button_settings.png</file>
+        <file>res/apollo/1631797224.ogg</file>
+        <file>res/apollo/1633332680.mc</file>
+        <file>res/apollo/tmp_1632029461.jpg</file>
+        <file>res/songselect/audio_bluetooth.png</file>
+        <file>res/songselect/audio_headphones.png</file>
+        <file>res/songselect/audio_speaker.png</file>
+        <file>res/songselect/folder_singles.png</file>
+        <file>res/songselect/folder_singles_selected.png</file>
+        <file>res/songselect/folder_singles_top.png</file>
+        <file>res/songselect/hscenter.png</file>
+        <file>res/songselect/jacket_glow.png</file>
+        <file>res/songselect/new.png</file>
+        <file>res/songselect/new_badge.png</file>
+        <file>res/songselect/pack.png</file>
+        <file>res/songselect/pack_cell.png</file>
+        <file>res/songselect/pack_cell_selected.png</file>
+        <file>res/songselect/pack_selected.png</file>
+        <file>res/songselect/pack_selector_restriction.png</file>
+        <file>res/songselect/pack_top.png</file>
+        <file>res/songselect/pluspartner_bg.png</file>
+        <file>res/songselect/sale.png</file>
+        <file>res/songselect/sale_bg.png</file>
+        <file>res/songselect/score_cell_bg.png</file>
+        <file>res/songselect/scoreheader.png</file>
+        <file>res/songselect/scorelist_cell.png</file>
+        <file>res/songselect/scorelist_header.png</file>
+        <file>res/songselect/scorelist_shadow.png</file>
+        <file>res/songselect/settings_grad.png</file>
+        <file>res/songselect/settings_stepper.png</file>
+        <file>res/songselect/settings_stepper_disabled.png</file>
+        <file>res/songselect/settings_stepper_pressed.png</file>
+        <file>res/songselect/single_back.png</file>
+        <file>res/songselect/single_bg.png</file>
+        <file>res/songselect/single_bg_2.png</file>
+        <file>res/songselect/single_bg_3.png</file>
+        <file>res/songselect/single_bottom.png</file>
+        <file>res/songselect/single_requirement_warning.png</file>
+        <file>res/songselect/single_requirement_warning_back.png</file>
+        <file>res/songselect/single_requirement_warning_underline.png</file>
+        <file>res/songselect/song_cell_corner_2.png</file>
+        <file>res/songselect/song_cell_corner_light.png</file>
+        <file>res/songselect/song_cell_lock.png</file>
+        <file>res/songselect/song_cell_lock_beyond.png</file>
+        <file>res/songselect/song_cell_lock_with_shadow.png</file>
+        <file>res/songselect/song_cell_locked.png</file>
+        <file>res/songselect/song_cell_name_underlay.png</file>
+        <file>res/songselect/song_cell_preferred.png</file>
+        <file>res/songselect/song_cell_preferred_pressed.png</file>
+        <file>res/songselect/song_cell_right.png</file>
+        <file>res/songselect/song_cell_right_special.png</file>
+        <file>res/songselect/song_cell_selected_piece.png</file>
+        <file>res/songselect/song_cell_selected_piece_beyond.png</file>
+        <file>res/songselect/song_currentpack.png</file>
+        <file>res/songselect/song_currentpack_selected.png</file>
+        <file>res/songselect/start.png</file>
+        <file>res/songselect/suki_off.png</file>
+        <file>res/songselect/sync.png</file>
+        <file>res/songselect/sync_box.png</file>
+        <file>res/songselect/sync_pressed.png</file>
+        <file>res/songselect/textback_back.png</file>
+        <file>res/songselect/unlock_bar_bottom.png</file>
+        <file>res/songselect/unlock_bar_top.png</file>
+        <file>res/songselect/unlock_button.png</file>
+        <file>res/songselect/unlock_button_pressed.png</file>
+        <file>res/songselect/unlock_check.png</file>
+        <file>res/songselect/unlock_checkbox.png</file>
+        <file>res/songselect/unlock_or_arrow.png</file>
+        <file>res/songselect/unlock_shadow.png</file>
+        <file>res/songselect/back.png</file>
+        <file>res/songselect/song_jacket_back_light.png</file>
+        <file>res/songselect/difficulty_selector_0.png</file>
+        <file>res/songselect/difficulty_selector_1.png</file>
+        <file>res/songselect/difficulty_selector_2.png</file>
+        <file>res/songselect/difficulty_selector_3_locked.png</file>
+        <file>res/songselect/song_score_tab.png</file>
+        <file>res/apollo/base.jpg</file>
+        <file>res/chronostasis/base.jpg</file>
+        <file>res/chronostasis/base.ogg</file>
+        <file>res/chronostasis/base_256.jpg</file>
+        <file>res/chronostasis/Chronostasis.ogg.sfk</file>
+        <file>res/infinity heaven/base.jpg</file>
+        <file>res/infinity heaven/base.ogg</file>
+        <file>res/infinity heaven/base_256.jpg</file>
+        <file>res/Vicious Heroism/base.jpg</file>
+        <file>res/Vicious Heroism/base_256.jpg</file>
+        <file>res/Vicious Heroism/preview.ogg</file>
+        <file>res/chronostasis/Chronostasis.mc</file>
+        <file>res/worldender/base.jpg</file>
+        <file>res/worldender/base_256.jpg</file>
+        <file>res/worldender/preview.ogg</file>
+        <file>res/songselect/title_back.png</file>
+        <file>res/bg_dark.jpg</file>
+        <file>res/infinity heaven/InfinityHeaven.mc</file>
     </qresource>
 </RCC>

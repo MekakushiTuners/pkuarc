@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += multimedia  multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,17 +25,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
+CONFIG += resources_big
+
 SOURCES += \
         main.cpp \
-        mainscene.cpp \
     button.cpp \
-    track.cpp
+    track.cpp \
+    gamescene.cpp \
+    mainscene.cpp \
+    introscene.cpp \
+    songselect.cpp \
+    utils.cpp
 
 HEADERS += \
-        mainscene.h \
     config.h \
     button.h \
-    track.h
+    track.h \
+    gamescene.h \
+    mainscene.h \
+    introscene.h \
+    songselect.h \
+    utils.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -43,3 +54,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res.qrc
+
+FORMS +=

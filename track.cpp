@@ -1,7 +1,8 @@
 #include "track.h"
 #include "config.h"
 #include "qpainter.h"
-
+#include<vector>
+using namespace std;
 Track::Track(QObject *parent)
     : QObject(parent)
 {
@@ -18,11 +19,28 @@ void Track::push_button(Button a){
 void Track::uptateStatus(int ntime){
     //printf("%d\n",ntime);
     while(pos1 < ontrack_but.size()){
-        Button fr = ontrack_but[pos1];
-        if(fr.endtime <= ntime - MISS_DELAY){
-            pos1++;
-            emit checksignal(4);
-        }else break;
+        Button &fr = ontrack_but[pos1];
+        if(fr.endtime == fr.m_time){ // single button
+            if(fr.m_time <= ntime - MISS_DELAY){
+                pos1++;
+                emit checksignal(4);
+            }else break;
+        }else{
+            if(fr.endtime <= ntime - PERFECT_DELAY - 10){
+                pos1++;
+            }
+            while(fr.pdpos < fr.pdtime.size()){
+                 if(fr.pdtime[fr.pdpos] <= ntime + PERFECT_DELAY && fr.pressed == 1){
+                        emit checksignal(1);
+                        //printf("%d %d %d\n",ntime,fr.pdpos,pos1);
+                        fr.pdpos++;
+                 }else if(fr.pdtime[fr.pdpos] <= ntime - PERFECT_DELAY && !fr.pressed){
+                        emit checksignal(4);
+                        fr.pdpos++;
+                 }else break;
+            }
+            break;
+        }
     }
     for(int i = pos1; i < ontrack_but.size(); i++){
         ontrack_but[i].fall(ntime);
@@ -39,25 +57,58 @@ void Track::uptateStatus(int ntime){
 void Track::onpressed(int ntime){
     if(pos1 < ontrack_but.size()){
         Button fr = ontrack_but[pos1];
+
+            int dir = abs(ntime - fr.m_time);
+
+            if(fr.endtime == fr.m_time){
+                //ontrack_but[pos1].first_pressed = 1;
+                if(dir <= PERFECT_DELAY){
+                    emit checksignal(1);
+                }else if(dir <= GREAT_DELAY){
+                    emit checksignal(2);
+                }else if(dir <= GOOD_DELAY){
+                    emit checksignal(3);
+                }else if(dir <= MISS_DELAY){
+                    emit checksignal(4);
+                }//else ontrack_but[pos1].first_pressed = 0;
+            }
+
+
+            int flg = (dir <= MISS_DELAY);
+
+            // 长条的首次判定在这里发出信号
+
+            if(fr.m_time == fr.endtime){
+                if(flg) pos1++;
+            }else{
+                ontrack_but[pos1].pressed = 1;
+            }
+
+    }
+}
+void Track::onreleased(int ntime){
+    if(pos1 < ontrack_but.size()){
+        Button fr = ontrack_but[pos1];
         int dir = abs(ntime - fr.m_time);
-        if(dir <= PERFECT_DELAY){
-            pos1++;
-            emit checksignal(1);
-        }else if(dir <= GREAT_DELAY){
-            pos1++;
-            emit checksignal(2);
-        }else if(dir <= GOOD_DELAY){
-            pos1++;
-            emit checksignal(3);
-        }else if(dir <= MISS_DELAY){
-            pos1++;
-            emit checksignal(4);
-        }
+        if(ntime < fr.m_time || fr.m_time == fr.endtime) return;
+        ontrack_but[pos1].pressed = 0;
     }
 }
 void Track::drawtrack(QPainter &painter){
     for(int i = pos1; i < ontrack_but.size(); i++){
-        painter.drawPixmap(ontrack_but[i].m_X, ontrack_but[i].m_Y, ontrack_but[i].m_button);
+        if(ontrack_but[i].m_time == ontrack_but[i].endtime){
+            drawpix_inmiddle(painter,ontrack_but[i].m_button,ontrack_but[i].m_X,ontrack_but[i].m_Y);
+        }else{
+            int timdir = ontrack_but[i].endtime - ontrack_but[i].m_time;
+            int pixh = ontrack_but[i].m_button.height();
+            int paintcnt = timdir * FALL_SPEED / pixh + ((int)(timdir * FALL_SPEED)%pixh>0);
+            int px = ontrack_but[i].m_X,py = ontrack_but[i].m_Y;
+            for(int j=1;j<=paintcnt;j++){
+                drawpix_inmiddle(painter,ontrack_but[i].m_button,px,py);
+                py-=pixh;
+            }
+        }
+
     }
 }
 void Track::setposition(int x,int y){
