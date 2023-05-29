@@ -34,7 +34,7 @@ public:
     }
 };
 #define font_size 6
-#define song_size 6
+#define song_size 7
 extern Song songs[song_size];
 extern QString font_path[font_size];
 

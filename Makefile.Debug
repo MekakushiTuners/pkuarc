@@ -138,6 +138,7 @@ compiler_rcc_clean:
 debug/qrc_res.o: res.qrc \
 		D:/qt/5.11.3/mingw53_32/bin/rcc.exe \
 		res/mid_but.webp \
+		res/shutter_l.png \
 		res/side-shards-01-IS-left.png \
 		res/note_hold_dark.png \
 		res/side-shards-01-IS-right.png \
@@ -151,6 +152,7 @@ debug/qrc_res.o: res.qrc \
 		res/hit_far.png \
 		res/hit_pure.png \
 		res/icon.png \
+		res/shutter_r.png \
 		res/5_d.png \
 		res/background.jpg \
 		res/good.png \
@@ -170,9 +172,18 @@ debug/qrc_res.o: res.qrc \
 		res/bg_light.jpg \
 		res/arc_icon.jpg \
 		res/result/res_banner.png \
+		res/result/grade_aa.png \
+		res/result/grade_b.png \
 		res/result/res_scoresection.png \
 		res/result/world_reward_fragment_container.png \
+		res/result/grade_a.png \
+		res/result/grade_ex.png \
+		res/result/res_scoresection_high.png \
 		res/result/result_stats_bg.png \
+		res/result/grade_d.png \
+		res/result/grade_ex+.png \
+		res/result/course_complete_text.png \
+		res/result/grade_c.png \
 		res/result/exp_label.png \
 		res/topbar/top_button_settings.png \
 		res/topbar/top_button.png \
@@ -1798,7 +1809,8 @@ debug/gamescene.o: gamescene.cpp gamescene.h \
 		mainscene.h \
 		songselect.h \
 		D:/qt/5.11.3/mingw53_32/include/QtGui/QBitmap \
-		D:/qt/5.11.3/mingw53_32/include/QtGui/qbitmap.h
+		D:/qt/5.11.3/mingw53_32/include/QtGui/qbitmap.h \
+		resultscene.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\gamescene.o gamescene.cpp
 
 debug/mainscene.o: mainscene.cpp mainscene.h \
@@ -2597,7 +2609,8 @@ debug/resultscene.o: resultscene.cpp resultscene.h \
 		songselect.h \
 		gamescene.h \
 		D:/qt/5.11.3/mingw53_32/include/QtGui/QBitmap \
-		D:/qt/5.11.3/mingw53_32/include/QtGui/qbitmap.h
+		D:/qt/5.11.3/mingw53_32/include/QtGui/qbitmap.h \
+		D:/qt/5.11.3/mingw53_32/include/QtWidgets/QGraphicsEffect
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\resultscene.o resultscene.cpp
 
 debug/moc_track.o: debug/moc_track.cpp 
