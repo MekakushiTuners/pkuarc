@@ -15,8 +15,8 @@
 #define ICON_GREAT_PATH ":/res/hit_pure.png"
 #define ICON_GOOD_PATH ":/res/hit_far.png"
 #define ICON_MISS_PATH ":/res/hit_lost.png"
-#define LONGBUT_PATH ":/res/note_hold.png"
-#define GAME_BACKGROUND_PATH ":/res/bg_byd_dark.jpg"
+#define LONGBUT_PATH ":/res/longbut.png"
+#define GAME_BACKGROUND_PATH ":/res/epilogue.jpg"
 #define MAIN_BACKGROUND_PATH ":/res/bg_light.jpg"
 #define RATING_PATH ":/res/rating_6.png"
 #define MID_SQUARE_PATH ":/res/mainmenu/world_active.png"
@@ -53,6 +53,25 @@
 #define TEXT_SHADOW_PATH ":/res/songselect/textback_back.png"
 #define Scorelist_shadow_PATH ":/res/songselect/title_back.png"
 #define SONGSELECT_BACKGROUND_PATH ":/res/bg_light.jpg"
+#define Pausebutton_PATH ":/res/ingame/btn-pause-active.png"
+#define Pausebg_PATH ":/res/ingame/pausebg.png"
+#define Uileft_PATH ":/res/ingame/uileft.png"
+#define Uiright_PATH ":/res/ingame/uiright.png"
+#define TRACK_BG_PATH ":/res/ingame/track.png"
+#define BOTTOM_LINE_PATH ":/res/bottomline.png"
+#define Scoresection_PATH ":/res/result/res_scoresection_high.png"
+#define Res_banner_PATH ":/res/result/res_banner.png"
+#define A_PATH ":/res/result/grade_a.png"
+#define AA_PATH ":/res/result/grade_aa.png"
+#define B_PATH ":/res/result/grade_b.png"
+#define C_PATH ":/res/result/grade_c.png"
+#define D_PATH ":/res/result/grade_d.png"
+#define EX_PATH ":/res/result/grade_ex.png"
+#define EXPLUS_PATH ":/res/result/grade_ex+.png"
+#define COMPLETE_BAR_PATH ":/res/result/course_complete_text.png"
+#define SHUTTER_L_PATH ":/res/shutter_l.png"
+#define SHUTTER_R_PATH ":/res/shutter_r.png"
+
 //#define MUSIC_PATH "qrc:/res/chronostasis/Chronostasis.ogg"
 //#define JSON_PATH ":/res/chronostasis/Chronostasis.mc"
 //#define MUSIC_PATH "qrc:/res/infinity heaven/InfinityHeaven.ogg"
@@ -61,18 +80,18 @@
 //#define JSON_PATH ":/res/Vicious Heroism/1561219884.mc"
 //#define MUSIC_PATH "qrc:/res/worldender/1659610730.ogg"
 //#define JSON_PATH ":/res/worldender/1659610730.mc"
-#define MUSIC_PATH "qrc:/res/apollo/1631797224.ogg"
-#define JSON_PATH ":/res/apollo/1633332680.mc"
+//#define MUSIC_PATH "qrc:/res/apollo/1631797224.ogg"
+//#define JSON_PATH ":/res/apollo/1633332680.mc"
 
 #define GAME_RATE 1
-#define FALL_SPEED 2.2
+#define FALL_SPEED 2
 #define PERFECT_DELAY 50
 #define GREAT_DELAY 90
 #define GOOD_DELAY 120
 #define MISS_DELAY 150
 #define CHECKLINE_POS 980
 #define TIME_EPS 0
-#define WAIT_TIME -250
+#define WAIT_TIME -300
 
 #endif // CONFIG_H
 

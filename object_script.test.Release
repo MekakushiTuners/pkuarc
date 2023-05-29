@@ -8,10 +8,12 @@ INPUT(
 ./release\introscene.o
 ./release\songselect.o
 ./release\utils.o
+./release\resultscene.o
 ./release\moc_track.o
 ./release\moc_gamescene.o
 ./release\moc_mainscene.o
 ./release\moc_introscene.o
 ./release\moc_songselect.o
 ./release\moc_utils.o
+./release\moc_resultscene.o
 );

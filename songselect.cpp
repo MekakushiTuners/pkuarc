@@ -21,16 +21,23 @@
 #include "QLabel"
 #include "QCoreApplication"
 #include "mainscene.h"
+#include "QFontDatabase"
 
 songselect::songselect(QWidget *parent) : QWidget(parent)
 {
     initscene();
 }
 void songselect::initscene(){
+    setAttribute(Qt::WA_DeleteOnClose);
+    for(int i=0;i<font_size;i++) QFontDatabase::addApplicationFont(font_path[i]);
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
     setWindowTitle(GAME_TITLE);
     setWindowIcon(QIcon(GAME_ICON));
     setFocusPolicy(Qt::StrongFocus);
+    shutter_l.load(SHUTTER_L_PATH);
+    shutter_r.load(SHUTTER_R_PATH);
+    scaling_pix(shutter_l,1.52);
+    scaling_pix(shutter_r,1.52);
     background.load(SONGSELECT_BACKGROUND_PATH);
     scaling_pix(background,1.6);
     //background = background.scaled(1.6*background.width(),1.6*background.height(),Qt::KeepAspectRatio);
@@ -68,7 +75,6 @@ void songselect::initscene(){
     setcolor(&label[1],QColor(8, 46, 84));
     drawtext(&label[1],QFont("GeosansLight", 20, false, false),760,33,"TateyamaAyano39");
     drawtext(&label[3],QFont("Noto Sans CJK SC Regular",12,false,false),1430,33,"残片");
-    game = new gamescene(0);
 //    for(int i=0;i<=19;i++) pixlabel[i] = new QLabel_C();
 //    for(int i=0;i<=9;i++) label[i] = new QLabel_C(),slabel[i] = new QLabel_C(),songtext[i][0] = new QLabel_C(),songtext[i][1] = new QLabel_C(),shsongtext[i][0] = new QLabel_C(),shsongtext[i][1] = new QLabel_C();
     scaling_pix(song_currentpack,1.3);
@@ -85,9 +91,9 @@ void songselect::initscene(){
     drawtext(&label[2],QFont("Noto Sans CJK SC Bold",10,false,false),1170,31,"设定");
     setpix(&pixlabel[4],membox,1540,31);
     int stx = 1700,sty = 150;
-    for(int i=0;i<=4;i++) songlist.push_back(i);
+    for(int i=0;i<song_size;i++) songlist.push_back(i);
 
-    for(int i=0;i<=4;i++){
+    for(int i=0;i<songlist.size();i++){
         int nx = stx - i * 25;
         int ny = sty + i * 140;
         setsong(songlist[i],nx,ny);
@@ -123,51 +129,22 @@ void songselect::initscene(){
     setpix(&pixlabel[11],difficulty_selector_1,stx+dir*1,sty);
     setpix(&pixlabel[10],difficulty_selector_0,stx,sty);
     scorelist_shadow.load(Scorelist_shadow_PATH);
-    connect(this,&songselect::playsignal,game,&gamescene::openslot);
+    //connect(this,&songselect::playsignal,game,&gamescene::openslot);
     for(int i=15;i<=16;i++){
         connect(&pixlabel[i],&QLabel_C::clicked,[&](){
-            playsignal(nowsong);
+            //playsignal(nowsong);
+            gamescene* game = new gamescene;
+            game->openslot(nowsong);
             //emit playsignal();
             QTime dieTime = QTime::currentTime().addMSecs(5);
             while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
             close();
+//            dieTime = QTime::currentTime().addMSecs(100);
+//            while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+//            delete this;
         });
     } // TEXT_START
-    m_timer.setInterval(GAME_RATE);
-    //start();
-}
-void songselect::start(){
-    tottime.start();
-    m_timer.start();
-
-    connect(&m_timer,&QTimer::timeout,[=](){
-        //updateStatus(tottime.elapsed());
-        update();
-    });
-}
-void songselect::backtomain(){
-    ms = new mainscene;
-    ms->openslot();
-    QTime dieTime = QTime::currentTime().addMSecs(5);
-    while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-    close();
-}
-void songselect::openslot(){
-    show();
-}
-void songselect::song_select_slot(){
-    game->show();
-    close();
-    game->playGame();
-}
-void songselect::paintEvent(QPaintEvent *event){
-    QPainter painter(this);
-
-    painter.setRenderHint(QPainter::Antialiasing, true);
-
-    painter.drawPixmap(960-background.width()/2,0,background);
-    painter.drawPixmap(0,0,topbar);
-    int stx = 1700,sty = 150;
+    stx = 1700,sty = 150;
     int nowx = stx -nowsong*25;
     int nowy = sty +nowsong*140;
     setpix(&pixlabel[14],song_cell_selected_piece,nowx-251,nowy+13);
@@ -185,4 +162,56 @@ void songselect::paintEvent(QPaintEvent *event){
 
     //setcolor(&label[5],QColor(255, 255, 255));
     drawtext_with_shadow(&label[5],&slabel[5],QFont("Exo", 20, false, false),391,147,to_string(songs[nowsong].difficulty));
+    m_timer.setInterval(GAME_RATE);
+    //start();
+}
+void songselect::start(){
+    tottime.start();
+    m_timer.start();
+
+    connect(&m_timer,&QTimer::timeout,[=](){
+        //updateStatus(tottime.elapsed());
+        update();
+    });
+}
+void songselect::backtomain(){
+    mainscene *ms = new mainscene;
+    ms->open_with_shutter();
+    QTime dieTime = QTime::currentTime().addMSecs(5);
+    while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+    close();
+//    dieTime = QTime::currentTime().addMSecs(100);
+//    while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+//    ;
+}
+void songselect::paintEvent(QPaintEvent *event){
+    QPainter painter(this);
+
+    painter.setRenderHint(QPainter::Antialiasing, true);
+
+    painter.drawPixmap(960-background.width()/2,0,background);
+    painter.drawPixmap(0,0,topbar);
+    int stx = 1700,sty = 150;
+    int nowx = stx -nowsong*25;
+    int nowy = sty +nowsong*140;
+    if(!opentimer.isActive()){
+
+
+        setpix(&pixlabel[14],song_cell_selected_piece,nowx-251,nowy+13);
+        setpix(&pixlabel[16],text_shadow,nowx-60,nowy);
+        setpix(&pixlabel[15],text_start,nowx-60,nowy);
+        QPixmap mp;mp.load(songs[nowsong].base);scaling_pix(mp,1.14);
+        setpix(&pixlabel[17],mp,546,645);
+        opacityEffect[1].setOpacity(0.3);
+        pixlabel[18].setGraphicsEffect(&opacityEffect[1]);
+        setpix(&pixlabel[18],scorelist_shadow,220,350);
+
+        drawtext_left_with_shadow(&label[6],&slabel[6],QFont("Exo", 30, false, false),30,350,songs[nowsong].name.toStdString());
+        drawtext_left_with_shadow(&label[7],&slabel[7],QFont("Exo", 15, false, false),30,410,songs[nowsong].writer.toStdString());
+        drawtext_left_with_shadow(&label[8],&slabel[8],QFont("Exo", 12, false, false),30,450,"BPM:"+to_string(songs[nowsong].bpm));
+
+        //setcolor(&label[5],QColor(255, 255, 255));
+        drawtext_with_shadow(&label[5],&slabel[5],QFont("Exo", 20, false, false),391,147,to_string(songs[nowsong].difficulty));
+
+    }
 }

@@ -35,7 +35,8 @@ SOURCES += \
     mainscene.cpp \
     introscene.cpp \
     songselect.cpp \
-    utils.cpp
+    utils.cpp \
+    resultscene.cpp
 
 HEADERS += \
     config.h \
@@ -45,7 +46,8 @@ HEADERS += \
     mainscene.h \
     introscene.h \
     songselect.h \
-    utils.h
+    utils.h \
+    resultscene.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

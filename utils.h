@@ -33,6 +33,10 @@ public:
 
     }
 };
-extern Song songs[5];
+#define font_size 6
+#define song_size 6
+extern Song songs[song_size];
+extern QString font_path[font_size];
+
 
 #endif // UTILS_H

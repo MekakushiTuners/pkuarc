@@ -8,10 +8,12 @@ INPUT(
 ./debug\introscene.o
 ./debug\songselect.o
 ./debug\utils.o
+./debug\resultscene.o
 ./debug\moc_track.o
 ./debug\moc_gamescene.o
 ./debug\moc_mainscene.o
 ./debug\moc_introscene.o
 ./debug\moc_songselect.o
 ./debug\moc_utils.o
+./debug\moc_resultscene.o
 );

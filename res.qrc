@@ -143,5 +143,40 @@
         <file>res/songselect/title_back.png</file>
         <file>res/bg_dark.jpg</file>
         <file>res/infinity heaven/InfinityHeaven.mc</file>
+        <file>res/ingame/btn-pause-active.png</file>
+        <file>res/ingame/pausebg.png</file>
+        <file>res/ingame/uileft.png</file>
+        <file>res/ingame/uiright.png</file>
+        <file>res/ingame/track.png</file>
+        <file>res/ingame/track_arcana.png</file>
+        <file>res/ingame/track_black.png</file>
+        <file>res/ingame/track_colorless.png</file>
+        <file>res/epilogue.jpg</file>
+        <file>res/bottomline.png</file>
+        <file>res/fonts/Exo-Regular.ttf</file>
+        <file>res/fonts/GeosansLight.ttf</file>
+        <file>res/fonts/kingsgmb.ttf</file>
+        <file>res/fonts/NanumBarunGothic-Regular.otf</file>
+        <file>res/fonts/NotoSansCJKsc-Regular.otf</file>
+        <file>res/fonts/NotoSansCJKsc-Bold.otf</file>
+        <file>res/the EmpError/1565417119.mc</file>
+        <file>res/the EmpError/the EmpEror.ogg</file>
+        <file>res/the EmpError/The EmpErroR.jpg</file>
+        <file>res/result/exp_label.png</file>
+        <file>res/result/res_banner.png</file>
+        <file>res/result/res_scoresection.png</file>
+        <file>res/result/result_stats_bg.png</file>
+        <file>res/result/world_reward_fragment_container.png</file>
+        <file>res/result/grade_a.png</file>
+        <file>res/result/grade_aa.png</file>
+        <file>res/result/grade_b.png</file>
+        <file>res/result/grade_c.png</file>
+        <file>res/result/grade_d.png</file>
+        <file>res/result/grade_ex.png</file>
+        <file>res/result/grade_ex+.png</file>
+        <file>res/result/res_scoresection_high.png</file>
+        <file>res/result/course_complete_text.png</file>
+        <file>res/shutter_l.png</file>
+        <file>res/shutter_r.png</file>
     </qresource>
 </RCC>

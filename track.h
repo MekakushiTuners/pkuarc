@@ -17,6 +17,11 @@ public:
     vector<Button> ontrack_but;
     vector<Button> nex_but;
     int pos1,pos2;
+    void clear(){
+        pos1 = pos2 = 0;
+        ontrack_but.clear();
+        nex_but.clear();
+    }
     void push_button(Button a);
     void uptateStatus(int ntime);
     void drawtrack(QPainter &painter);

@@ -19,7 +19,8 @@
 #include <QColor>
 #include <QCoreApplication>
 #include <QMouseEvent>
-
+#include <QFontDatabase>
+#include <mainscene.h>
 
 
 introscene::introscene(QWidget *parent) :
@@ -29,11 +30,16 @@ introscene::introscene(QWidget *parent) :
 }
 
 void introscene::initscene(){
+    for(int i=0;i<font_size;i++) QFontDatabase::addApplicationFont(font_path[i]);
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
     setWindowTitle(GAME_TITLE);
     setWindowIcon(QIcon(GAME_ICON));
     setFocusPolicy(Qt::StrongFocus);
     m_timer.setInterval(GAME_RATE);
+    shutter_l.load(SHUTTER_L_PATH);
+    shutter_r.load(SHUTTER_R_PATH);
+    scaling_pix(shutter_l,1.52);
+    scaling_pix(shutter_r,1.52);
     bg_y = 0;
     op_finished = 0;
     lp = 0;
@@ -41,8 +47,8 @@ void introscene::initscene(){
     background.load(BACKGROUND_PATH);
     game_title_icon.load(ARC_ICON_PATH);
     //new_game.show();
-    new_game = new mainscene();
-    connect(this,&introscene::gamesignal,new_game,&mainscene::openslot);
+    //new_game = new mainscene();
+    //connect(this,&introscene::gamesignal,new_game,&mainscene::openslot);
     startgame();
 //    QPalette pal(palette());
 //    pal.setColor(QPalette::Background, QColor(0,0,0,100));
@@ -86,18 +92,10 @@ void introscene::paintEvent(QPaintEvent *event){
     //painter.fillRect(0, 0, this->rect().width(), this->rect().height(), QColor(0,0,0,lp));
 }
 void introscene::keyPressEvent(QKeyEvent *event){
-    emit gamesignal();
-    //printf("%d\n",1);
-    QTime dieTime = QTime::currentTime().addMSecs(5);
-    while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-    close();
+    close_with_shutter<mainscene>();
 }
 void introscene::mousePressEvent(QMouseEvent *event){
-    emit gamesignal();
-    //printf("%d\n",1);
-    QTime dieTime = QTime::currentTime().addMSecs(5);
-    while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-    close();
+    close_with_shutter<mainscene>();
 }
 introscene::~introscene()
 {

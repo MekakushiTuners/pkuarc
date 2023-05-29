@@ -20,12 +20,19 @@
 #include "config.h"
 #include "QLabel"
 #include <QCoreApplication>
+#include <QFontDatabase>
 
 mainscene::mainscene(QWidget *parent) : QWidget(parent)
 {
     initscene();
 }
 void mainscene::initscene(){
+    setAttribute(Qt::WA_DeleteOnClose);
+    shutter_l.load(SHUTTER_L_PATH);
+    shutter_r.load(SHUTTER_R_PATH);
+    scaling_pix(shutter_l,1.52);
+    scaling_pix(shutter_r,1.52);
+    for(int i=0;i<font_size;i++) QFontDatabase::addApplicationFont(font_path[i]);
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
     setWindowTitle(GAME_TITLE);
     setWindowIcon(QIcon(GAME_ICON));
@@ -57,7 +64,7 @@ void mainscene::initscene(){
     setcolor(&label[1],QColor(8, 46, 84));
     drawtext(label[1],QFont("GeosansLight", 20, false, false),760,33,"TateyamaAyano39");
     drawtext(label[3],QFont("Noto Sans CJK SC Regular",12,false,false),1430,33,"残片");
-    select_page = new songselect();
+    //select_page = new songselect();
     //connect(this,&gamescene::gamesignal,new_game,&mainscene::openslot);
     for(int i=0;i<=10;i++) pixlabel[i] = new QLabel_C();
     setpix(pixlabel[0],midsquare,760,540);
@@ -115,15 +122,13 @@ void mainscene::updateStatus(int ntime){
     if(y_cha>=40) y_cha = 80-y_cha;
     y_cha = -y_cha;
 }
-void mainscene::openslot(){
-    show();
-}
 void mainscene::song_select_slot(){
-    select_page->show();
-    QTime dieTime = QTime::currentTime().addMSecs(5);
-    while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-    close();
-    //select_page->playGame();
+//    songselect *select_page = new songselect;
+//    select_page->openslot();
+//    QTime dieTime = QTime::currentTime().addMSecs(5);
+//    while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+//    close();
+    close_with_shutter<songselect>();
 }
 void mainscene::paintEvent(QPaintEvent *event){
     QPainter painter(this);
@@ -136,13 +141,4 @@ void mainscene::paintEvent(QPaintEvent *event){
     //drawpix_inmiddle(painter,chara,1550,640);
     //painter.fillRect(0, 0, this->rect().width(), 100, QColor(255,255,255,255));
     painter.drawPixmap(0,0,topbar);
-    //painter.drawPixmap(1340,0,ratingbox);
-
-    //drawpix_inmiddle(painter,midsquare,760,540);
-
-    //painter.drawPixmap(360,540,startgamebut);
-
-    //scaling_pix()
-
-
 }

@@ -41,7 +41,7 @@ public:
     void initscene();
     void paintEvent(QPaintEvent *event);
     void updateStatus(int ntime);
-    songselect *select_page;
+    //songselect *select_page;
     QPixmap background,ratingbox,midsquare,charabox,up_button,mid_button,down_button;
     QPixmap chara,text_world,midbut_shadow,topbar,setbox,seticon,membox;
     QLabel label[10];
@@ -88,10 +88,75 @@ public:
         label.move(x-width/2,y-height/2);
         label.show();
     }
+
+    QPixmap shutter_l,shutter_r;
+    QLabel_C shut[4];
+    QTimer closetimer,closeupdater;
+    template<class T>
+    void close_with_shutter(){
+
+        closetimer.setInterval(500);
+        closeupdater.setInterval(1);
+        //closecounter.start();
+        connect(&closeupdater,&QTimer::timeout,[&](){
+            int rest = closetimer.remainingTime();
+            if(rest>100){
+                double x_r = 1.0*(rest-100)/400;
+                int nxl = shutter_l.width()/2-(x_r*x_r)*shutter_l.width();
+                int nxr = 1920-shutter_r.width()/2+(x_r*x_r)*shutter_r.width();
+                setpix(&shut[0],shutter_l,nxl,540);
+                setpix(&shut[1],shutter_r,nxr,540);
+            }
+
+        });
+        connect(&closetimer,&QTimer::timeout,[&](){
+            closetimer.stop();
+            closeupdater.stop();
+            T* new_scene = new T;
+            new_scene->open_with_shutter();
+            QTime dieTime = QTime::currentTime().addMSecs(5);
+            while( QTime::currentTime() < dieTime ) QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+            //closecounter.stop();
+            close();
+        });
+        closetimer.start();
+        closeupdater.start();
+
+    }
+    QTimer opentimer,openupdater;
+    void open_with_shutter(){
+
+        opentimer.setInterval(500);
+        openupdater.setInterval(1);
+        //closecounter.start();
+        connect(&openupdater,&QTimer::timeout,[&](){
+            int rest = 500-opentimer.remainingTime();
+            if(rest>=100){
+                double x_r = 1.0*(rest-100)/400;
+                int nxl = shutter_l.width()/2-(x_r*x_r)*shutter_l.width();
+                int nxr = 1920-shutter_r.width()/2+(x_r*x_r)*shutter_r.width();
+                setpix(&shut[2],shutter_l,nxl,540);
+                setpix(&shut[3],shutter_r,nxr,540);
+            }
+
+        });
+        connect(&opentimer,&QTimer::timeout,[&](){
+            shut[2].hide();
+            shut[3].hide();
+            opentimer.stop();
+            openupdater.stop();
+
+        });
+        setpix(&shut[2],shutter_l,shutter_l.width()/2,540);
+        setpix(&shut[3],shutter_r,1920-shutter_r.width()/2,540);
+        show();
+        opentimer.start();
+        openupdater.start();
+
+    }
 signals:
 
 public slots:
-    void openslot();
     void song_select_slot();
 };
 

@@ -6,8 +6,8 @@ using namespace std;
 Track::Track(QObject *parent)
     : QObject(parent)
 {
-    m_X = GAME_WIDTH*0.5;
-    m_Y = GAME_HEIGHT*0.5;
+    //m_X = GAME_WIDTH*0.5;
+    //m_Y = GAME_HEIGHT*0.5;
     pos1 = pos2 = 0;
 }
 Track::~Track(){
