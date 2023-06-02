@@ -1,0 +1,422 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/button.png</file>
+        <file>res/icon.png</file>
+        <file>res/good.png</file>
+        <file>res/great.png</file>
+        <file>res/miss.png</file>
+        <file>res/perfect.png</file>
+        <file>res/longbut.png</file>
+        <file>res/chronostasis/Chronostasis.ogg</file>
+        <file>res/infinity heaven/InfinityHeaven.ogg</file>
+        <file>res/Vicious Heroism/1555620010.ogg</file>
+        <file>res/Vicious Heroism/1561219884.mc</file>
+        <file>res/worldender/1659610730.mc</file>
+        <file>res/worldender/1659610730.ogg</file>
+        <file>res/background.jpg</file>
+        <file>res/background_1.jpg</file>
+        <file>res/arc_icon.jpg</file>
+        <file>res/arcaea.webp</file>
+        <file>res/hit_far.png</file>
+        <file>res/hit_lost.png</file>
+        <file>res/hit_pure.png</file>
+        <file>res/note.png</file>
+        <file>res/note_hold.png</file>
+        <file>res/note_hold_dark.png</file>
+        <file>res/single_light.jpg</file>
+        <file>res/scenery_bg_default.png</file>
+        <file>res/bg_byd_dark.jpg</file>
+        <file>res/bg_light.jpg</file>
+        <file>res/rating_6.png</file>
+        <file>res/5_d.png</file>
+        <file>res/mid_but.webp</file>
+        <file>res/purple_chara_underlay.png</file>
+        <file>res/side-shards-01-IS-left.png</file>
+        <file>res/side-shards-01-IS-right.png</file>
+        <file>res/0.png</file>
+        <file>res/0_icon.png</file>
+        <file>res/mainmenu/main_about_active.png</file>
+        <file>res/mainmenu/main_musicplay_active.png</file>
+        <file>res/mainmenu/main_network.png</file>
+        <file>res/mainmenu/world_active.png</file>
+        <file>res/mainmenu/world_title_en.png</file>
+        <file>res/mainmenu/world_resume.png</file>
+        <file>res/topbar/top_bar_bg.png</file>
+        <file>res/topbar/settings.png</file>
+        <file>res/topbar/top_button.png</file>
+        <file>res/topbar/top_button_settings.png</file>
+        <file>res/apollo/1631797224.ogg</file>
+        <file>res/apollo/1633332680.mc</file>
+        <file>res/songselect/audio_bluetooth.png</file>
+        <file>res/songselect/audio_headphones.png</file>
+        <file>res/songselect/audio_speaker.png</file>
+        <file>res/songselect/folder_singles.png</file>
+        <file>res/songselect/folder_singles_selected.png</file>
+        <file>res/songselect/folder_singles_top.png</file>
+        <file>res/songselect/hscenter.png</file>
+        <file>res/songselect/jacket_glow.png</file>
+        <file>res/songselect/new.png</file>
+        <file>res/songselect/new_badge.png</file>
+        <file>res/songselect/pack.png</file>
+        <file>res/songselect/pack_cell.png</file>
+        <file>res/songselect/pack_cell_selected.png</file>
+        <file>res/songselect/pack_selected.png</file>
+        <file>res/songselect/pack_selector_restriction.png</file>
+        <file>res/songselect/pack_top.png</file>
+        <file>res/songselect/pluspartner_bg.png</file>
+        <file>res/songselect/sale.png</file>
+        <file>res/songselect/sale_bg.png</file>
+        <file>res/songselect/score_cell_bg.png</file>
+        <file>res/songselect/scoreheader.png</file>
+        <file>res/songselect/scorelist_cell.png</file>
+        <file>res/songselect/scorelist_header.png</file>
+        <file>res/songselect/scorelist_shadow.png</file>
+        <file>res/songselect/settings_grad.png</file>
+        <file>res/songselect/settings_stepper.png</file>
+        <file>res/songselect/settings_stepper_disabled.png</file>
+        <file>res/songselect/settings_stepper_pressed.png</file>
+        <file>res/songselect/single_back.png</file>
+        <file>res/songselect/single_bg.png</file>
+        <file>res/songselect/single_bg_2.png</file>
+        <file>res/songselect/single_bg_3.png</file>
+        <file>res/songselect/single_bottom.png</file>
+        <file>res/songselect/single_requirement_warning.png</file>
+        <file>res/songselect/single_requirement_warning_back.png</file>
+        <file>res/songselect/single_requirement_warning_underline.png</file>
+        <file>res/songselect/song_cell_corner_2.png</file>
+        <file>res/songselect/song_cell_corner_light.png</file>
+        <file>res/songselect/song_cell_lock.png</file>
+        <file>res/songselect/song_cell_lock_beyond.png</file>
+        <file>res/songselect/song_cell_lock_with_shadow.png</file>
+        <file>res/songselect/song_cell_locked.png</file>
+        <file>res/songselect/song_cell_name_underlay.png</file>
+        <file>res/songselect/song_cell_preferred.png</file>
+        <file>res/songselect/song_cell_preferred_pressed.png</file>
+        <file>res/songselect/song_cell_right.png</file>
+        <file>res/songselect/song_cell_right_special.png</file>
+        <file>res/songselect/song_cell_selected_piece.png</file>
+        <file>res/songselect/song_cell_selected_piece_beyond.png</file>
+        <file>res/songselect/song_currentpack.png</file>
+        <file>res/songselect/song_currentpack_selected.png</file>
+        <file>res/songselect/start.png</file>
+        <file>res/songselect/suki_off.png</file>
+        <file>res/songselect/sync.png</file>
+        <file>res/songselect/sync_box.png</file>
+        <file>res/songselect/sync_pressed.png</file>
+        <file>res/songselect/textback_back.png</file>
+        <file>res/songselect/unlock_bar_bottom.png</file>
+        <file>res/songselect/unlock_bar_top.png</file>
+        <file>res/songselect/unlock_button.png</file>
+        <file>res/songselect/unlock_button_pressed.png</file>
+        <file>res/songselect/unlock_check.png</file>
+        <file>res/songselect/unlock_checkbox.png</file>
+        <file>res/songselect/unlock_or_arrow.png</file>
+        <file>res/songselect/unlock_shadow.png</file>
+        <file>res/songselect/back.png</file>
+        <file>res/songselect/song_jacket_back_light.png</file>
+        <file>res/songselect/difficulty_selector_0.png</file>
+        <file>res/songselect/difficulty_selector_1.png</file>
+        <file>res/songselect/difficulty_selector_2.png</file>
+        <file>res/songselect/difficulty_selector_3_locked.png</file>
+        <file>res/songselect/song_score_tab.png</file>
+        <file>res/apollo/base.jpg</file>
+        <file>res/chronostasis/base.jpg</file>
+        <file>res/infinity heaven/base.jpg</file>
+        <file>res/infinity heaven/base.ogg</file>
+        <file>res/infinity heaven/base_256.jpg</file>
+        <file>res/Vicious Heroism/base.jpg</file>
+        <file>res/chronostasis/Chronostasis.mc</file>
+        <file>res/worldender/base.jpg</file>
+        <file>res/songselect/title_back.png</file>
+        <file>res/bg_dark.jpg</file>
+        <file>res/infinity heaven/InfinityHeaven.mc</file>
+        <file>res/ingame/btn-pause-active.png</file>
+        <file>res/ingame/pausebg.png</file>
+        <file>res/ingame/uileft.png</file>
+        <file>res/ingame/uiright.png</file>
+        <file>res/ingame/track.png</file>
+        <file>res/ingame/track_arcana.png</file>
+        <file>res/ingame/track_black.png</file>
+        <file>res/ingame/track_colorless.png</file>
+        <file>res/epilogue.jpg</file>
+        <file>res/bottomline.png</file>
+        <file>res/fonts/Exo-Regular.ttf</file>
+        <file>res/fonts/GeosansLight.ttf</file>
+        <file>res/fonts/kingsgmb.ttf</file>
+        <file>res/fonts/NanumBarunGothic-Regular.otf</file>
+        <file>res/fonts/NotoSansCJKsc-Regular.otf</file>
+        <file>res/fonts/NotoSansCJKsc-Bold.otf</file>
+        <file>res/the EmpError/1565417119.mc</file>
+        <file>res/the EmpError/the EmpEror.ogg</file>
+        <file>res/the EmpError/The EmpErroR.jpg</file>
+        <file>res/result/exp_label.png</file>
+        <file>res/result/res_banner.png</file>
+        <file>res/result/res_scoresection.png</file>
+        <file>res/result/result_stats_bg.png</file>
+        <file>res/result/world_reward_fragment_container.png</file>
+        <file>res/result/grade_a.png</file>
+        <file>res/result/grade_aa.png</file>
+        <file>res/result/grade_b.png</file>
+        <file>res/result/grade_c.png</file>
+        <file>res/result/grade_d.png</file>
+        <file>res/result/grade_ex.png</file>
+        <file>res/result/grade_ex+.png</file>
+        <file>res/result/res_scoresection_high.png</file>
+        <file>res/result/course_complete_text.png</file>
+        <file>res/shutter_l.png</file>
+        <file>res/shutter_r.png</file>
+        <file>res/PRAGMATISM -RESURRECTION-/1643522058.ogg</file>
+        <file>res/PRAGMATISM -RESURRECTION-/1663773858.mc</file>
+        <file>res/PRAGMATISM -RESURRECTION-/base.jpg</file>
+        <file>res/world/1_b.jpg</file>
+        <file>res/world/1_d.png</file>
+        <file>res/world/1_t.png</file>
+        <file>res/world/2_b.jpg</file>
+        <file>res/world/2_d.png</file>
+        <file>res/world/2_t.png</file>
+        <file>res/world/3_b.jpg</file>
+        <file>res/world/3_d.png</file>
+        <file>res/world/3_t.png</file>
+        <file>res/world/4_b.jpg</file>
+        <file>res/world/4_d.png</file>
+        <file>res/world/4_t.png</file>
+        <file>res/world/5_b.jpg</file>
+        <file>res/world/5_d.png</file>
+        <file>res/world/5_t.png</file>
+        <file>res/world/6_b.jpg</file>
+        <file>res/world/6_d.png</file>
+        <file>res/world/7_b.jpg</file>
+        <file>res/world/7_d.png</file>
+        <file>res/world/7_t.png</file>
+        <file>res/world/1001_b.jpg</file>
+        <file>res/world/1001_d.png</file>
+        <file>res/world/1001_t.png</file>
+        <file>res/world/arrow.png</file>
+        <file>res/world/arrowr.png</file>
+        <file>res/world/title_back.png</file>
+        <file>res/world/6_t.png</file>
+        <file>res/song_adjust_minus.png</file>
+        <file>res/song_adjust_plus.png</file>
+        <file>res/Additional Memory/1582955597.ogg</file>
+        <file>res/Additional Memory/base.jpg</file>
+        <file>res/Alexandrite/base.jpg</file>
+        <file>res/Alexandrite/key_4k_hard.mc</file>
+        <file>res/Alexandrite/onoken - Alexandrite.ogg</file>
+        <file>res/AttraqtiA/1612835868.mc</file>
+        <file>res/AttraqtiA/1612835868.ogg</file>
+        <file>res/AttraqtiA/base.jpg</file>
+        <file>res/Black Lotus/base.jpg</file>
+        <file>res/Black Lotus/Black Lotus.ogg</file>
+        <file>res/Climax/1550746067.ogg</file>
+        <file>res/Climax/1587089997.mc</file>
+        <file>res/Climax/base.jpg</file>
+        <file>res/Cybernecia Catharsis/1627166647.ogg</file>
+        <file>res/Cybernecia Catharsis/1627372699.mc</file>
+        <file>res/Cybernecia Catharsis/base.jpg</file>
+        <file>res/Dreadnought/1502709579.ogg</file>
+        <file>res/Dreadnought/1556039181.mc</file>
+        <file>res/Dreadnought/base.jpg</file>
+        <file>res/Einherjar Joker/1677308237.mc</file>
+        <file>res/Einherjar Joker/1677308237.ogg</file>
+        <file>res/Einherjar Joker/base.jpg</file>
+        <file>res/Ether Strike/1616215376.ogg</file>
+        <file>res/Ether Strike/1627743882.mc</file>
+        <file>res/Ether Strike/base.jpg</file>
+        <file>res/Felis/1613199798.ogg</file>
+        <file>res/Felis/1615603410.mc</file>
+        <file>res/Felis/base.jpg</file>
+        <file>res/Galaxy Friends/base.jpg</file>
+        <file>res/Galaxy Friends/Kobaryo - Galaxy Friends (biemote) [4K Expert].mc</file>
+        <file>res/Galaxy Friends/Kobaryo - Galaxy Friends.mp3</file>
+        <file>res/GOODTEK/1497057582.ogg</file>
+        <file>res/GOODTEK/1509800885.mc</file>
+        <file>res/GOODTEK/base.jpg</file>
+        <file>res/IZANA/1634533978.mc</file>
+        <file>res/IZANA/1634533978.ogg</file>
+        <file>res/IZANA/base.jpg</file>
+        <file>res/LAMIA/1631827293.mc</file>
+        <file>res/LAMIA/base.jpg</file>
+        <file>res/LAMIA/Lamia.ogg</file>
+        <file>res/Life is PIANO/1571174740.ogg</file>
+        <file>res/Life is PIANO/1633170839.mc</file>
+        <file>res/Life is PIANO/base.jpg</file>
+        <file>res/Lost Desire/1620470817.ogg</file>
+        <file>res/Lost Desire/1632458025.mc</file>
+        <file>res/Lost Desire/base.jpg</file>
+        <file>res/Lower/audio.ogg</file>
+        <file>res/Lower/bg.jpg</file>
+        <file>res/Lower/Master.mc</file>
+        <file>res/mainmenu/card/card_overlay.png</file>
+        <file>res/mainmenu/card/CardLayer.csb</file>
+        <file>res/mainmenu/card/storyprogress_icon.png</file>
+        <file>res/mainmenu/card/storyprogress_underlay.png</file>
+        <file>res/mainmenu/character/awaken_button.png</file>
+        <file>res/mainmenu/character/awaken_button_pressed.png</file>
+        <file>res/mainmenu/character/AwakenDialogContents.csb</file>
+        <file>res/mainmenu/character/levelup_button.png</file>
+        <file>res/mainmenu/character/levelup_button_pressed.png</file>
+        <file>res/mainmenu/character/LevelUpDialogContents.csb</file>
+        <file>res/mainmenu/network/AccountLogin.csb</file>
+        <file>res/mainmenu/network/button_friend_add.png</file>
+        <file>res/mainmenu/network/button_friend_add_disabled.png</file>
+        <file>res/mainmenu/network/button_friend_add_pressed.png</file>
+        <file>res/mainmenu/network/button_profilecard.png</file>
+        <file>res/mainmenu/network/button_profilecard_pressed.png</file>
+        <file>res/mainmenu/network/button_side.png</file>
+        <file>res/mainmenu/network/button_side_disabled.png</file>
+        <file>res/mainmenu/network/button_side_pressed.png</file>
+        <file>res/mainmenu/network/icon_back.png</file>
+        <file>res/mainmenu/network/icon_back_pressed.png</file>
+        <file>res/mainmenu/network/InputTextDialog.csb</file>
+        <file>res/mainmenu/network/LoggedInNetwork.csb</file>
+        <file>res/mainmenu/network/LoggedOutNetwork.csb</file>
+        <file>res/mainmenu/network/Login.csb</file>
+        <file>res/mainmenu/network/Login.csd.csd.csb</file>
+        <file>res/mainmenu/network/main_button_sync.png</file>
+        <file>res/mainmenu/network/main_button_sync_pressed.png</file>
+        <file>res/mainmenu/network/memory_diamond.png</file>
+        <file>res/mainmenu/network/memory_diamond_glow_border.png</file>
+        <file>res/mainmenu/network/memory_diamond_pressed.png</file>
+        <file>res/mainmenu/network/memory_purchase.png</file>
+        <file>res/mainmenu/network/network_dash.png</file>
+        <file>res/mainmenu/network/PurchaseMemories.csb</file>
+        <file>res/mainmenu/network/PurchaseMemoriesNode.csb</file>
+        <file>res/mainmenu/network/question.png</file>
+        <file>res/mainmenu/network/Registration.csb</file>
+        <file>res/mainmenu/network/skill_seal.png</file>
+        <file>res/mainmenu/network/sync_explanation.png</file>
+        <file>res/mainmenu/network/SyncConflict.csb</file>
+        <file>res/mainmenu/network/SyncDialogContents.csb</file>
+        <file>res/mainmenu/network/title_float.png</file>
+        <file>res/mainmenu/network/user_back.png</file>
+        <file>res/mainmenu/network/UserCell.csb</file>
+        <file>res/mainmenu/AboutContents.csb</file>
+        <file>res/mainmenu/arrow_left.png</file>
+        <file>res/mainmenu/arrow_left_pressed.png</file>
+        <file>res/mainmenu/back.png</file>
+        <file>res/mainmenu/bilibili.png</file>
+        <file>res/mainmenu/CharacterSelect.csb</file>
+        <file>res/mainmenu/close.png</file>
+        <file>res/mainmenu/close_pressed.png</file>
+        <file>res/mainmenu/ContentUpdateDisplay.csb</file>
+        <file>res/mainmenu/event_button_purple.png</file>
+        <file>res/mainmenu/event_button_purple_pressed.png</file>
+        <file>res/mainmenu/facebook.png</file>
+        <file>res/mainmenu/help_button.png</file>
+        <file>res/mainmenu/help_button_pressed.png</file>
+        <file>res/mainmenu/LanguageDialog.csb</file>
+        <file>res/mainmenu/main_about.png</file>
+        <file>res/mainmenu/main_about_pressed.png</file>
+        <file>res/mainmenu/main_button.png</file>
+        <file>res/mainmenu/main_button_disabled.png</file>
+        <file>res/mainmenu/main_button_pressed.png</file>
+        <file>res/mainmenu/main_more.png</file>
+        <file>res/mainmenu/main_more_pressed.png</file>
+        <file>res/mainmenu/main_musicplay.png</file>
+        <file>res/mainmenu/main_musicplay_pressed.png</file>
+        <file>res/mainmenu/main_musicplay_selected.png</file>
+        <file>res/mainmenu/main_network_disconnected.png</file>
+        <file>res/mainmenu/main_network_offline.png</file>
+        <file>res/mainmenu/main_network_pressed.png</file>
+        <file>res/mainmenu/main_story.png</file>
+        <file>res/mainmenu/main_story_alt.png</file>
+        <file>res/mainmenu/main_story_alt_active.png</file>
+        <file>res/mainmenu/main_story_alt_pressed.png</file>
+        <file>res/mainmenu/main_story_pressed.png</file>
+        <file>res/mainmenu/MainMenu.csb</file>
+        <file>res/mainmenu/ManageDownloads.csb</file>
+        <file>res/mainmenu/memory_diamond.png</file>
+        <file>res/mainmenu/memory_diamond_top.png</file>
+        <file>res/mainmenu/MemoryDiamond.csb</file>
+        <file>res/mainmenu/TOSAgreementContents.csb</file>
+        <file>res/mainmenu/twitter.png</file>
+        <file>res/mainmenu/update_bg.png</file>
+        <file>res/mainmenu/view_button.png</file>
+        <file>res/mainmenu/world.png</file>
+        <file>res/mainmenu/world_offline.png</file>
+        <file>res/mainmenu/world_offline_pressed.png</file>
+        <file>res/mainmenu/world_pressed.png</file>
+        <file>res/mainmenu/world_resume_pressed.png</file>
+        <file>res/mainmenu/world_title_en-pressed.png</file>
+        <file>res/Our 16bit Wars/1573386540.mc</file>
+        <file>res/Our 16bit Wars/16bwar.ogg</file>
+        <file>res/Our 16bit Wars/base.jpg</file>
+        <file>res/PRIMITIVE LIGHTS/1678332184.ogg</file>
+        <file>res/PRIMITIVE LIGHTS/base.jpg</file>
+        <file>res/PUPA/1488631483.ogg</file>
+        <file>res/PUPA/1502265124.mc</file>
+        <file>res/PUPA/base.jpg</file>
+        <file>res/Redraw the Colorless World/1637161609.mc</file>
+        <file>res/Redraw the Colorless World/1637161609.ogg</file>
+        <file>res/Redraw the Colorless World/base.jpg</file>
+        <file>res/Scarlet Cage/1596727022.mc</file>
+        <file>res/Scarlet Cage/1596727022.ogg</file>
+        <file>res/Scarlet Cage/base.jpg</file>
+        <file>res/sheriruth/1635578955.ogg</file>
+        <file>res/sheriruth/1635582628.mc</file>
+        <file>res/sheriruth/base.jpg</file>
+        <file>res/Singularity/1595302665.mc</file>
+        <file>res/Singularity/1595302665.ogg</file>
+        <file>res/Singularity/base.jpg</file>
+        <file>res/songselect/tempestissimo/back.png</file>
+        <file>res/songselect/tempestissimo/challenge_cleared.png</file>
+        <file>res/songselect/tempestissimo/challenge_locked.png</file>
+        <file>res/songselect/tempestissimo/checkmark.png</file>
+        <file>res/songselect/tempestissimo/input_banner.png</file>
+        <file>res/songselect/tempestissimo/input_shadow.png</file>
+        <file>res/songselect/tempestissimo/line.png</file>
+        <file>res/songselect/tempestissimo/lock_bottom.png</file>
+        <file>res/songselect/tempestissimo/lock_top.png</file>
+        <file>res/songselect/tempestissimo/ring.png</file>
+        <file>res/songselect/tempestissimo/tempest_jacket.png</file>
+        <file>res/songselect/tempestissimo/tempest_jacket_pressed.png</file>
+        <file>res/songselect/tempestissimo/tempest_locked.png</file>
+        <file>res/songselect/tempestissimo/ui_locked.png</file>
+        <file>res/Stasis/0.jpg</file>
+        <file>res/Stasis/1536922897.ogg</file>
+        <file>res/Stasis/1536995149.mc</file>
+        <file>res/Tempestissimo/1590574801.ogg</file>
+        <file>res/Tempestissimo/1591511883.mc</file>
+        <file>res/Tempestissimo/base.jpg</file>
+        <file>res/TEmPTaTiON/1578758172.mc</file>
+        <file>res/TEmPTaTiON/base.jpg</file>
+        <file>res/TEmPTaTiON/TEmPTaTiON.ogg</file>
+        <file>res/topbar/cloud_sync.png</file>
+        <file>res/topbar/status_bg.png</file>
+        <file>res/topbar/top_button_disable_solid.png</file>
+        <file>res/topbar/top_button_max.png</file>
+        <file>res/topbar/top_button_pressed.png</file>
+        <file>res/topbar/top_button_special.png</file>
+        <file>res/topbar/top_button_special_pressed.png</file>
+        <file>res/topbar/top_button_sync_failed.png</file>
+        <file>res/topbar/TopBar.csb</file>
+        <file>res/Vindication/1635848244.mc</file>
+        <file>res/Vindication/1635848244.ogg</file>
+        <file>res/Vindication/base.jpg</file>
+        <file>res/World Fragments I/1613374137.ogg</file>
+        <file>res/World Fragments I/1613374725.mc</file>
+        <file>res/World Fragments I/base.jpg</file>
+        <file>res/1f1e33/1612411734.ogg</file>
+        <file>res/1f1e33/1630475348.mc</file>
+        <file>res/1f1e33/base.jpg</file>
+        <file>res/Loschen/1622282644.mc</file>
+        <file>res/Loschen/1622282644.ogg</file>
+        <file>res/Loschen/base.jpg</file>
+        <file>res/w4/1644653159.mc</file>
+        <file>res/w4/base.jpg</file>
+        <file>res/w4/w4.ogg</file>
+        <file>res/worldexecuteme/1517405629.ogg</file>
+        <file>res/worldexecuteme/1582030307.mc</file>
+        <file>res/worldexecuteme/base.jpg</file>
+        <file>res/add_togame.py</file>
+        <file>res/AIUEOON/1634363932.mc</file>
+        <file>res/AIUEOON/1634363932.ogg</file>
+        <file>res/AIUEOON/base.jpg</file>
+        <file>res/Black Lotus/pm.mc</file>
+        <file>res/Additional Memory/1582955597.mc</file>
+        <file>res/PRIMITIVE LIGHTS/1678447341.mc</file>
+        <file>res/Malody Regular dan10/1584338873.mc</file>
+        <file>res/Malody Regular dan10/mrv20.ogg</file>
+        <file>res/Malody Regular dan10/r1000.jpg</file>
+    </qresource>
+</RCC>
