@@ -1,10 +1,11 @@
-#ifndef UTILS_H
+﻿#ifndef UTILS_H
 #define UTILS_H
 #include <QWidget>
 #include <QLabel>
 #include <QMouseEvent>
 #include <iostream>
 #include <QString>
+#include <cmath>
 using namespace std;
 
 class QLabel_C: public QLabel{

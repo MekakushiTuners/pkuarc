@@ -1,4 +1,4 @@
-#include "chapterselect.h"
+﻿#include "chapterselect.h"
 #include "qicon.h"
 #include "qpainter.h"
 #include "qtimer.h"
@@ -23,41 +23,12 @@
 #include "mainscene.h"
 #include "QFontDatabase"
 
-chapterselect::chapterselect(QWidget *parent) : QWidget(parent)
+chapterselect::chapterselect(QWidget *parent) : basescene(parent)
 {
-    set_bg.load(Pausebg_PATH);
-    scaling_pix(set_bg,1.55);
-    icon_plus.load(ICON_PLUS_PATH);
-    icon_minus.load(ICON_MINUS_PATH);
-    ret_button.load(Pausebutton_PATH);
-    first_seted = 0;
 
 }
 void chapterselect::initscene(){
-    setAttribute(Qt::WA_DeleteOnClose);
-    for(int i=0;i<font_size;i++) QFontDatabase::addApplicationFont(font_path[i]);
-    setFixedSize(GAME_WIDTH,GAME_HEIGHT);
-    setWindowTitle(GAME_TITLE);
-    setWindowIcon(QIcon(GAME_ICON));
-    setFocusPolicy(Qt::StrongFocus);
-    shutter_l.load(SHUTTER_L_PATH);
-    shutter_r.load(SHUTTER_R_PATH);
-    scaling_pix(shutter_l,1.52);
-    scaling_pix(shutter_r,1.52);
-    background.load(SONGSELECT_BACKGROUND_PATH);
-    scaling_pix(background,1.6);
-    //background = background.scaled(1.6*background.width(),1.6*background.height(),Qt::KeepAspectRatio);
-    ratingbox.load(RATING_PATH);
-    scaling_pix(ratingbox,0.55);
-    charabox.load(CHARA_ICON_PATH);
-    scaling_pix(charabox,0.7);
-    topbar.load(TOP_BAR_PATH);
-    scaling_pix(topbar,1.25);
-    setbox.load(SETTING_BOX_PATH);
-    scaling_pix(setbox,1.25);
-    seticon.load(SETTING_ICON_PATH);
-    membox.load(MEMORY_BOX_PATH);
-    scaling_pix(membox,1.25);
+
     backbutton.load(BACK_BUTTON_PATH);
     arrow_l.load(ARROW_PATH);
     arrow_r.load(ARROW_R_PATH);
@@ -92,34 +63,15 @@ void chapterselect::initscene(){
     scaling_pix(arrow_r,0.9);
     // 字体参照 https://www.bilibili.com/read/cv18904916
     drawtext(&label[0],QFont("Noto Sans CJK SC Regular", 15, false, false),110,33,"World");
-    setcolor(&label[1],QColor(8, 46, 84));
-    drawtext(&label[1],QFont("GeosansLight", 20, false, false),760,33,"TateyamaAyano39");
-    drawtext(&label[3],QFont("Noto Sans CJK SC Regular",12,false,false),1430,33,"残片");
     setpix(&pixlabel[8],backbutton,161,1032);
     connect(&pixlabel[8],&QLabel_C::clicked,this,&chapterselect::close_to_mainscene);
     drawtext(&label[4],QFont("Noto Sans CJK SC Bold", 13, false, false),131,1020,"主菜单");
     connect(&label[4],&QLabel_C::clicked,this,&chapterselect::close_to_mainscene);
-//    for(int i=0;i<=19;i++) pixlabel[i] = new QLabel_C();
-//    for(int i=0;i<=9;i++) label[i] = new QLabel_C(),slabel[i] = new QLabel_C(),songtext[i][0] = new QLabel_C(),songtext[i][1] = new QLabel_C(),shsongtext[i][0] = new QLabel_C(),shsongtext[i][1] = new QLabel_C();
-    setpix(&pixlabel[0],charabox,980,40);
-    setpix(&pixlabel[1],ratingbox,1022,75);
-    setpix(&pixlabel[2],setbox,1170,31);
-    setpix(&pixlabel[3],seticon,1170,31);
-    opacityEffect[0].setOpacity(0.3);
-    pixlabel[3].setGraphicsEffect(&opacityEffect[0]);
-    label[2].setStyleSheet("color:white;");
-    drawtext(&label[2],QFont("Noto Sans CJK SC Bold",10,false,false),1170,31,"设定");
-    connect(&label[2],&QLabel_C::clicked,this,&chapterselect::opensettings);
-    connect(&pixlabel[2],&QLabel_C::clicked,this,&chapterselect::opensettings);
-    connect(&pixlabel[3],&QLabel_C::clicked,this,&chapterselect::opensettings);
-    setpix(&pixlabel[4],membox,1540,31);
-    m_timer.setInterval(GAME_RATE);
-    //nowchap = 1;
-    //setpix(&label[5],bg[nowchap],960,540);
     setpix(&label[6],square[nowchap],960,610);
     title_back = title_back.scaled(2*title_back.width(),title_back.height(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
-    opacityEffect[1].setOpacity(0.7);
-    label[10].setGraphicsEffect(&opacityEffect[1]);
+    opacityEffect[1] = new QGraphicsOpacityEffect;
+    opacityEffect[1]->setOpacity(0.7);
+    label[10].setGraphicsEffect(opacityEffect[1]);
     setpix(&label[10],title_back,960,300);
     setpix(&label[7],title[nowchap],960,270);
     setpix(&label[8],arrow_l,560,610);
@@ -129,7 +81,6 @@ void chapterselect::initscene(){
     connect(&label[6],&QLabel_C::clicked,[&](){
         close_to_songselect();
     });
-    drawtext_with_shadow(&label[11],&slabel[11],QFont("GeosansLight", 13, false, false),1022,75,"11.45");
 }
 void chapterselect::close_to_mainscene(){
 

@@ -1,4 +1,4 @@
-#include "track.h"
+﻿#include "track.h"
 #include "config.h"
 #include "qpainter.h"
 #include<vector>
@@ -81,10 +81,8 @@ void Track::onpressed(int ntime){
 
             int flg = (dir <= MISS_DELAY);
 
-            // 长条的首次判定在这里发出信号
-
             if(fr.m_time == fr.endtime){
-                if(flg) pos1++;
+                if(flg) pos1++;pressed = 1;
             }else{
                 //ontrack_but[pos1].pressed = 1;
                 pressed = 1;

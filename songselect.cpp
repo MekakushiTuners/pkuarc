@@ -1,4 +1,4 @@
-#include "songselect.h"
+﻿#include "songselect.h"
 #include "qicon.h"
 #include "qpainter.h"
 #include "qtimer.h"
@@ -24,41 +24,12 @@
 #include "QFontDatabase"
 #include <chapterselect.h>
 
-songselect::songselect(QWidget *parent) : QWidget(parent)
+songselect::songselect(QWidget *parent) : basescene(parent)
 {
-    //initscene();
-    set_bg.load(Pausebg_PATH);
-    scaling_pix(set_bg,1.55);
-    icon_plus.load(ICON_PLUS_PATH);
-    icon_minus.load(ICON_MINUS_PATH);
-    ret_button.load(Pausebutton_PATH);
-    first_seted = 0;
+
 }
 void songselect::initscene(){
-    setAttribute(Qt::WA_DeleteOnClose);
-    for(int i=0;i<font_size;i++) QFontDatabase::addApplicationFont(font_path[i]);
-    setFixedSize(GAME_WIDTH,GAME_HEIGHT);
-    setWindowTitle(GAME_TITLE);
-    setWindowIcon(QIcon(GAME_ICON));
-    setFocusPolicy(Qt::StrongFocus);
-    shutter_l.load(SHUTTER_L_PATH);
-    shutter_r.load(SHUTTER_R_PATH);
-    scaling_pix(shutter_l,1.52);
-    scaling_pix(shutter_r,1.52);
-    background.load(SONGSELECT_BACKGROUND_PATH);
-    scaling_pix(background,1.6);
-    //background = background.scaled(1.6*background.width(),1.6*background.height(),Qt::KeepAspectRatio);
-    ratingbox.load(RATING_PATH);
-    scaling_pix(ratingbox,0.55);
-    charabox.load(CHARA_ICON_PATH);
-    scaling_pix(charabox,0.7);
-    topbar.load(TOP_BAR_PATH);
-    scaling_pix(topbar,1.25);
-    setbox.load(SETTING_BOX_PATH);
-    scaling_pix(setbox,1.25);
-    seticon.load(SETTING_ICON_PATH);
-    membox.load(MEMORY_BOX_PATH);
-    scaling_pix(membox,1.25);
+
     text_shadow.load(TEXT_SHADOW_PATH);
     scaling_pix(text_shadow,1.3);
     song_cell_corner_2.load(Song_cell_corner_2_PATH);
@@ -79,27 +50,11 @@ void songselect::initscene(){
 
     // 字体参照 https://www.bilibili.com/read/cv18904916
     drawtext(&label[0],QFont("Noto Sans CJK SC Regular", 15, false, false),110,33,"选择一首歌曲");
-    setcolor(&label[1],QColor(8, 46, 84));
-    drawtext(&label[1],QFont("GeosansLight", 20, false, false),760,33,"TateyamaAyano39");
-    drawtext(&label[3],QFont("Noto Sans CJK SC Regular",12,false,false),1430,33,"残片");
-//    for(int i=0;i<=19;i++) pixlabel[i] = new QLabel_C();
-//    for(int i=0;i<=9;i++) label[i] = new QLabel_C(),slabel[i] = new QLabel_C(),songtext[i][0] = new QLabel_C(),songtext[i][1] = new QLabel_C(),shsongtext[i][0] = new QLabel_C(),shsongtext[i][1] = new QLabel_C();
+
     scaling_pix(song_currentpack,1.3);
     setpix(&pixlabel[5],song_currentpack,960,190);
     scaling_pix(new_badge,1.2);
     setpix(&pixlabel[6],new_badge,1115,135);
-    setpix(&pixlabel[0],charabox,980,40);
-    setpix(&pixlabel[1],ratingbox,1022,75);
-    setpix(&pixlabel[2],setbox,1170,31);
-    setpix(&pixlabel[3],seticon,1170,31);
-    opacityEffect[0].setOpacity(0.3);
-    pixlabel[3].setGraphicsEffect(&opacityEffect[0]);
-    label[2].setStyleSheet("color:white;");
-    drawtext(&label[2],QFont("Noto Sans CJK SC Bold",10,false,false),1170,31,"设定");
-    connect(&label[2],&QLabel_C::clicked,this,&songselect::opensettings);
-    connect(&pixlabel[2],&QLabel_C::clicked,this,&songselect::opensettings);
-    connect(&pixlabel[3],&QLabel_C::clicked,this,&songselect::opensettings);
-    setpix(&pixlabel[4],membox,1540,31);
     int stx = 1700,sty = 150;
     //for(int i=0;i<song_size;i++) songlist.push_back(i);
     sort(songlist.begin(),songlist.end(),[=](int a,int b){
@@ -165,8 +120,9 @@ void songselect::initscene(){
     setpix(&pixlabel[15],text_start,nowx-60,nowy);
     QPixmap mp;mp.load(songs[nowsong].base);scaling_pix(mp,1.14);
     setpix(&pixlabel[17],mp,546,645);
-    opacityEffect[1].setOpacity(0.3);
-    pixlabel[18].setGraphicsEffect(&opacityEffect[1]);
+    opacityEffect[1] = new QGraphicsOpacityEffect;
+    opacityEffect[1]->setOpacity(0.3);
+    pixlabel[18].setGraphicsEffect(opacityEffect[1]);
     setpix(&pixlabel[18],scorelist_shadow,220,350);
 
     drawtext_left_with_shadow(&label[6],&slabel[6],QFont("Exo", 30, false, false),30,350,songs[nowsong].name.toStdString());
@@ -191,8 +147,6 @@ void songselect::initscene(){
         setcolor(&label[11],QColor(200, 200, 200));
         drawtext(&label[11],QFont("Exo",11,false,false),890,140,"PACKS");
     }
-    drawtext_with_shadow(&label[12],&slabel[12],QFont("GeosansLight", 13, false, false),1022,75,"11.45");
-    m_timer.setInterval(GAME_RATE);
     //start();
 }
 void songselect::close_to_chap(){
@@ -291,8 +245,9 @@ void songselect::paintEvent(QPaintEvent *event){
         setpix(&pixlabel[15],text_start,nowx-60,nowy);
         QPixmap mp;mp.load(songs[nowsong].base);scaling_pix(mp,1.14);
         setpix(&pixlabel[17],mp,546,645);
-        opacityEffect[1].setOpacity(0.3);
-        pixlabel[18].setGraphicsEffect(&opacityEffect[1]);
+        opacityEffect[1] = new QGraphicsOpacityEffect;
+        opacityEffect[1]->setOpacity(0.3);
+        pixlabel[18].setGraphicsEffect(opacityEffect[1]);
         setpix(&pixlabel[18],scorelist_shadow,220,350);
 
         drawtext_left_with_shadow(&label[6],&slabel[6],QFont("Exo", 30, false, false),30,350,songs[nowsong].name.toStdString());

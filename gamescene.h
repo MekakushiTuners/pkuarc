@@ -1,4 +1,4 @@
-#ifndef GAMESCENE_H
+﻿#ifndef GAMESCENE_H
 #define GAMESCENE_H
 
 #include <QMainWindow>
@@ -300,15 +300,15 @@ public:
 
     }
     void open_with_shutter(){
-        opentimer.setInterval(2000);
+        opentimer.setInterval(1000);
         openupdater.setInterval(1);
         //closecounter.start();
         connect(&openupdater,&QTimer::timeout,[=](){
-            int rest = 2000-opentimer.remainingTime();
-            if(rest>=500){
-                double x_r = 1.0*(rest-500)/1500;
+            int rest = 1000-opentimer.remainingTime();
+            if(rest>=500&&rest<=900){
+                double x_r = 1.0*(rest-500)/400;
                 setWindowOpacity(x_r*x_r);
-            }
+            }else if (rest>900) setWindowOpacity(1);
 
         });
         connect(&opentimer,&QTimer::timeout,[&](){

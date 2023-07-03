@@ -1,4 +1,4 @@
-#include "resultscene.h"
+﻿#include "resultscene.h"
 #include "config.h"
 #include "qicon.h"
 #include "qpainter.h"
@@ -23,19 +23,9 @@
 
 using namespace std;
 resultscene::resultscene(QWidget *parent)
-    : QWidget(parent)
+    : basescene(parent)
 {
-    shutter_l.load(SHUTTER_L_PATH);
-    shutter_r.load(SHUTTER_R_PATH);
-    scaling_pix(shutter_l,1.52);
-    scaling_pix(shutter_r,1.52);
 
-    set_bg.load(Pausebg_PATH);
-    scaling_pix(set_bg,1.55);
-    icon_plus.load(ICON_PLUS_PATH);
-    icon_minus.load(ICON_MINUS_PATH);
-    ret_button.load(Pausebutton_PATH);
-    first_seted = 0;
 }
 
 resultscene::~resultscene()
@@ -81,30 +71,7 @@ void resultscene::close_to_mainscene(){
 
 }
 void resultscene::initscene(){
-    setAttribute(Qt::WA_DeleteOnClose);
-    y_bg = y_cha = 0;
-    for(int i=0;i<font_size;i++) QFontDatabase::addApplicationFont(font_path[i]);
-    setFixedSize(GAME_WIDTH,GAME_HEIGHT);
-    setWindowTitle(GAME_TITLE);
-    setWindowIcon(QIcon(GAME_ICON));
-    m_timer.setInterval(GAME_RATE);
-    setFocusPolicy(Qt::StrongFocus);
-    background.load(MAIN_BACKGROUND_PATH);
-    scaling_pix(background,1.6);
-    //background = background.scaled(1.6*background.width(),1.6*background.height(),Qt::KeepAspectRatio);
-    ratingbox.load(RATING_PATH);
-    scaling_pix(ratingbox,0.55);
-    midsquare.load(MID_SQUARE_PATH);
-    charabox.load(CHARA_ICON_PATH);
-    scaling_pix(charabox,0.7);
-    chara.load(CHARA_PATH);
-    topbar.load(TOP_BAR_PATH);
-    scaling_pix(topbar,1.25);
-    setbox.load(SETTING_BOX_PATH);
-    scaling_pix(setbox,1.25);
-    seticon.load(SETTING_ICON_PATH);
-    membox.load(MEMORY_BOX_PATH);
-    scaling_pix(membox,1.25);
+
     backbutton.load(BACK_BUTTON_PATH);
     scoresection.load(Scoresection_PATH);
     res_banner.load(Res_banner_PATH);
@@ -117,25 +84,8 @@ void resultscene::initscene(){
     pd_explus.load(EXPLUS_PATH);
     base.load(songs[songnumber].base);
     // 字体参照 https://www.bilibili.com/read/cv18904916
-    setcolor(&label[1],QColor(8, 46, 84));
-    drawtext(&label[1],QFont("GeosansLight", 20, false, false),760,33,"TateyamaAyano39");
-    drawtext(&label[3],QFont("Noto Sans CJK SC Regular",12,false,false),1430,33,"残片");
     drawtext(&label[4],QFont("Noto Sans CJK SC Regular", 15, false, false),70,33,"结果");
-    setpix(&pixlabel[6],charabox,980,40);
-    setpix(&pixlabel[7],ratingbox,1022,75);
-    setpix(&pixlabel[8],setbox,1170,31);
-    setpix(&pixlabel[9],seticon,1170,31);
 
-    opacityEffect[0] = new QGraphicsOpacityEffect;
-    opacityEffect[0]->setOpacity(0.3);
-    pixlabel[9].setGraphicsEffect(opacityEffect[0]);
-
-    label[2].setStyleSheet("color:white;");
-    drawtext(&label[2],QFont("Noto Sans CJK SC Bold",10,false,false),1170,31,"设定");
-    connect(&label[2],&QLabel_C::clicked,this,&resultscene::opensettings);
-    connect(&pixlabel[8],&QLabel_C::clicked,this,&resultscene::opensettings);
-    connect(&pixlabel[9],&QLabel_C::clicked,this,&resultscene::opensettings);
-    setpix(&pixlabel[10],membox,1540,31);
     scaling_pix(res_banner,1.3);
     setpix(&pixlabel[11],res_banner,960,550);
     scaling_pix(scoresection,1.25);
@@ -190,7 +140,6 @@ void resultscene::initscene(){
     drawtext(&tex[16],QFont("GeosansLight", 20, false, false),990,855,to_string(lost));
     drawtext(&tex[17],QFont("Noto Sans CJK SC Bold", 13, false, false),131,1020,"返回");
     connect(&tex[17],&QLabel_C::clicked,this,&resultscene::close_to_mainscene);
-    drawtext_with_shadow(&tex[18],&sha[18],QFont("GeosansLight", 13, false, false),1022,75,"11.45");
 }
 void resultscene::backtomain(){
     mainscene *ms = new mainscene;

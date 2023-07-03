@@ -1,4 +1,4 @@
-#include <utils.h>
+﻿#include <utils.h> 
 
 Song songs[song_size] = {
 //Song(6,":/res/apollo/base.jpg","Apollo","qrc:/res/apollo/1631797224.ogg",":/res/apollo/1633332680.mc","TJ.hangneil",137),
@@ -11,7 +11,7 @@ Song songs[song_size] = {
 //                        Song(9,":/res/PRAGMATISM -RESURRECTION-/base.jpg","PRAGMATISM -RESURRECTION-","qrc:/res/PRAGMATISM -RESURRECTION-/1643522058.ogg",":/res/PRAGMATISM -RESURRECTION-/1663773858.mc","Laur",174),
                          Song(3, ":/res/Vicious Heroism/base.jpg", "Vicious Heroism", "qrc:/res/Vicious Heroism/1555620010.ogg", ":/res/Vicious Heroism/1561219884.mc", "Kobaryo", 256),
                          Song(10, ":/res/1f1e33/base.jpg", "#1f1e33", "qrc:/res/1f1e33/1612411734.ogg", ":/res/1f1e33/1630475348.mc", "Cameilla", 181),
-                         Song(8, ":/res/Additional Memory/base.jpg", "Additional Memory", "qrc:/res/Additional Memory/1582955597.ogg", ":/res/Additional Memory/1582955597.mc", "Jin", 200),
+                         Song(9, ":/res/Additional Memory/base.jpg", "Additional Memory", "qrc:/res/Additional Memory/1582955597.ogg", ":/res/Additional Memory/1582955597.mc", "Jin", 200),
                          Song(9, ":/res/AIUEOON/base.jpg", "AI[UE]OON", "qrc:/res/AIUEOON/1634363932.ogg", ":/res/AIUEOON/1634363932.mc", "N[I]TRO", 145),
                          Song(8, ":/res/Alexandrite/base.jpg", "Alexandrite", "qrc:/res/Alexandrite/onoken - Alexandrite.ogg", ":/res/Alexandrite/key_4k_hard.mc", "BlackY", 175),
                          // 5

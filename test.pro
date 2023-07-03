@@ -28,6 +28,7 @@ CONFIG += c++11
 CONFIG += resources_big
 
 SOURCES += \
+    basescene.cpp \
         main.cpp \
     button.cpp \
     track.cpp \
@@ -40,6 +41,7 @@ SOURCES += \
     chapterselect.cpp
 
 HEADERS += \
+    basescene.h \
     config.h \
     button.h \
     track.h \
